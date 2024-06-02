@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract PartsOfABigWhole is ERC721, Ownable {
-    enum NFTType { Barrel, Nippers, Uniform }
+    enum NFTType {Barrel, Nippers, Uniform}
 
     uint256 public constant BARREL_SUPPLY = 3000;
     uint256 public constant NIPPERS_SUPPLY = 1000;
@@ -20,7 +20,10 @@ contract PartsOfABigWhole is ERC721, Ownable {
     mapping(NFTType => uint256) public minted;
     mapping(address => mapping(NFTType => uint256)) public mintedPerWallet;
 
-    constructor() ERC721("Parts of a Big Whole", "PABW") {}
+    constructor()
+    ERC721("Parts of a Big Whole", "PABW")
+    Ownable(0xC9cA66A8EE9Aa7a62726dc764245554DD6DF3EB9)
+    {}
 
     modifier onlyWhenMintEnabled() {
         require(mintEnabled, "Minting is not enabled");

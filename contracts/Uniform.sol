@@ -5,6 +5,6 @@ import "./assets/BaseNft.sol";
 
 contract Uniform is BaseNFT {
     constructor()
-    BaseNFT("Uniform", "UNF", 1000, 1, "", "0xC9cA66A8EE9Aa7a62726dc764245554DD6DF3EB9")
+    BaseNFT("Uniform", "UNF", 1000, 1, "", 0xC9cA66A8EE9Aa7a62726dc764245554DD6DF3EB9)
     {}
 }
