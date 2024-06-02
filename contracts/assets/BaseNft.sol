@@ -13,8 +13,9 @@ contract BaseNFT is ERC721, Ownable {
 
     mapping(address => uint256) public mintedPerWallet;
 
-    constructor(string memory name, string memory symbol, uint256 _maxSupply, uint256 _maxPerWallet, string memory _baseURI)
+    constructor(string memory name, string memory symbol, uint256 _maxSupply, uint256 _maxPerWallet, string memory _baseURI, address owner)
     ERC721(name, symbol)
+    Ownable(owner)
     {
         maxSupply = _maxSupply;
         maxPerWallet = _maxPerWallet;
