@@ -2,12 +2,12 @@
 
 ```shell
 npx hardhat compile
-npx hardhat run scripts/deploy.ts --network amoy
+npx hardhat run scripts/deploy.ts --network polygon
 ```
 # Verify
 
 ```shell
-npx hardhat verify --network ropsten <DEPLOYED_CONTRACT_ADDRESS>
+npx hardhat verify --network polygon 0x4223aE0EcEB4BB59e1dd92D7b12F9F3f9aD44E71
 ```
 
 ## Contracts

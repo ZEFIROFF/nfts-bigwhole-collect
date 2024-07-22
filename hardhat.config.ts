@@ -8,10 +8,14 @@ const config: HardhatUserConfig = {
     amoy: {
       url: process.env.RPC_URL || "",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+    },
+    polygon: {
+        url: process.env.RPC_URL || "",
+        accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     }
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: process.env.SCAN_KEY,
   },
 };
 
