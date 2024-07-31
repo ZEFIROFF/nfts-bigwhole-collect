@@ -5,6 +5,6 @@ import "./assets/BaseNft.sol";
 
 contract Barrel is BaseNFT {
     constructor()
-    BaseNFT("Barrel", "BRL", 3000, 1, "", 0xC9cA66A8EE9Aa7a62726dc764245554DD6DF3EB9)
+    BaseNFT("Barrel", "BRL", 3000, 1, "", msg.sender)
     {}
 }
