@@ -5,6 +5,6 @@ import "./assets/BaseNft.sol";
 
 contract Nippers is BaseNFT {
     constructor()
-    BaseNFT("Nippers", "NPR", 1000, 1, "", msg.sender)
+    BaseNFT("Nippers", "NPR", 1000, 1, "https://app.alloca.io/nft/nippers/", msg.sender)
     {}
 }

@@ -9,18 +9,26 @@ contract BaseNFT is ERC721, Ownable {
     uint256 public currentSupply;
     uint256 public maxPerWallet;
     bool public mintEnabled;
-    string public baseURI;
+    string private _baseTokenURI;
 
     mapping(address => uint256) public mintedPerWallet;
 
-    constructor(string memory name, string memory symbol, uint256 _maxSupply, uint256 _maxPerWallet, string memory _baseURI, address owner)
+    constructor(
+        string memory name,
+        string memory symbol,
+        uint256 _maxSupply,
+        uint256 _maxPerWallet,
+        string memory baseURI,
+        address owner
+    )
     ERC721(name, symbol)
     Ownable(owner)
     {
         maxSupply = _maxSupply;
         maxPerWallet = _maxPerWallet;
-        baseURI = _baseURI;
         mintEnabled = false;
+
+        _baseTokenURI = baseURI;
     }
 
     modifier onlyWhenMintEnabled() {
@@ -29,7 +37,7 @@ contract BaseNFT is ERC721, Ownable {
     }
 
     function setBaseURI(string memory newBaseURI) external onlyOwner {
-        baseURI = newBaseURI;
+        _baseTokenURI = newBaseURI;
     }
 
     function toggleMinting() external onlyOwner {
@@ -47,6 +55,6 @@ contract BaseNFT is ERC721, Ownable {
     }
 
     function _baseURI() internal view override returns (string memory) {
-        return baseURI;
+        return _baseTokenURI;
     }
 }

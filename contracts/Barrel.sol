@@ -5,6 +5,6 @@ import "./assets/BaseNft.sol";
 
 contract Barrel is BaseNFT {
     constructor()
-    BaseNFT("Barrel", "BRL", 3000, 1, "", msg.sender)
+    BaseNFT("Barrel", "BRL", 3000, 1, "https://app.alloca.io/nft/barrel/", msg.sender)
     {}
 }

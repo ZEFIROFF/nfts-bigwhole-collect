@@ -5,6 +5,6 @@ import "./assets/BaseNft.sol";
 
 contract Uniform is BaseNFT {
     constructor()
-    BaseNFT("Uniform", "UNF", 1000, 1, "", msg.sender)
+    BaseNFT("Uniform", "UNF", 1000, 1, "https://app.alloca.io/nft/uniform/", msg.sender)
     {}
 }
